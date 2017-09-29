@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'vegurbold';
+    src: url('Vegur-Bold-webfont.eot');
+    src: url('Vegur-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Vegur-Bold-webfont.woff2') format('woff2'),
+         url('Vegur-Bold-webfont.woff') format('woff'),
+         url('Vegur-Bold-webfont.ttf') format('truetype'),
+         url('Vegur-Bold-webfont.svg#vegurbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+

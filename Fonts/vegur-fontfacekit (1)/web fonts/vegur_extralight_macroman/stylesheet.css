@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'vegurlight';
+    src: url('Vegur-Light-webfont.eot');
+    src: url('Vegur-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Vegur-Light-webfont.woff2') format('woff2'),
+         url('Vegur-Light-webfont.woff') format('woff'),
+         url('Vegur-Light-webfont.ttf') format('truetype'),
+         url('Vegur-Light-webfont.svg#vegurlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'vegurregular';
+    src: url('Vegur-Regular-webfont.eot');
+    src: url('Vegur-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Vegur-Regular-webfont.woff2') format('woff2'),
+         url('Vegur-Regular-webfont.woff') format('woff'),
+         url('Vegur-Regular-webfont.ttf') format('truetype'),
+         url('Vegur-Regular-webfont.svg#vegurregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
