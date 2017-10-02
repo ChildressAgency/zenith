@@ -45,8 +45,8 @@ body{
   display:inline-block;
   text-align:center;
   padding:2px 25px;
-  color:#1c6eb3;
-  border:1px solid #1c6eb3;
+  color:#1b6db4;
+  border:1px solid #1b6db4;
   text-transform:uppercase;
   font-family:vegurbold;
   background-color:transparent;
@@ -58,6 +58,11 @@ body{
   color:#fff;
   border-color:#fff;
   text-decoration:none;
+}
+
+section{
+  padding-top:40px;
+  padding-bottom:40px;
 }
 
 #hp-hero{
@@ -113,7 +118,7 @@ body{
 .navbar-nav>li.active>a,
 .navbar-nav>li>a:hover,
 .navbar-nav>li>a:focus{
-  color:#1c6eb3;
+  color:#1b6db4;
   background-color:transparent;
   text-decoration:none;
 }
@@ -147,10 +152,287 @@ body{
   left:0px;
   right:0px;
   text-align:center;
+  color:#1a97d4;
+  text-transform:uppercase;
+}
+.scrolldown>span{
+  color:#fff;
+  display:block;
+  font-size:40px;
+  line-height:.5em;
+}
+.scrolldown:hover,
+.scrolldown:focus{
+  text-decoration:none;
+  color:#1a97d4;
+}
+
+#testimonial-slider{
+  margin-top:25px;
+  padding-top:50px;
+}
+#testimonial-slider:before{
+  content:"";
+  position:absolute;
+  height:50px;
+  width:60px;
+  background-image:url(images/quotes.png);
+  top:-20px;
+  left:75px;
+  background-position:0 0;
+}
+#testimonial-slider:after{
+  content:"";
+  position:absolute;
+  height:50px;
+  width:60px;
+  background-image:url(images/quotes.png);
+  top:-20px;
+  right:50px;
+  background-position:-65px 0px;
+}
+#testimonial-slider .carousel-inner{
+  max-width:650px;
+  margin-left:auto;
+  margin-right:auto;
+}
+#testimonial-slider .item{
+  color:#fff;
+  font-size:20px;
+}
+#testimonial-slider .testimonial-author{
+  font-size:12px;
+  text-transform:uppercase;
+  float:right;
+}
+#testimonial-slider .carousel-control.right,
+#testimonial-slider .carousel-control.left{
+  background: transparent;
+  background-repeat:no-repeat;
+}
+#testimonial-slider .carousel-control>.fa{
+  position:absolute;
+  top:36%;
+  font-size:50px;
+}
+
+.center-nav{
+  text-align:center;
+}
+.center-nav>.container{
+  max-width:800px;
+}
+.center-nav .list-inline>li{
+  padding-left:0;
+  padding-right:0;
+  margin-left:-2px;
+  margin-right:-2px;
+}
+.center-nav .img-links>li>a h4{
+  font-family:vegurbold, sans-serif;
+  text-transform:uppercase;
+  font-size:14px;
+  color:#fff;
+  background-color:#1b6db4;
+  margin-top:0;
+  margin-bottom:0;
+  padding-top:5px;
+  padding-bottom:5px;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+.center-nav .img-links>li>a:hover h4{
+  color:#fff;
+  background-color:#12507f;
+  text-decoration:none;
+}
+
+#years>.container{
+  max-width:600px;
+}
+#years h2{
+  font-size:28px;
+  text-transform:uppercase;
+  color:#1b6db4;
+  font-family:vegurbold, sans-serif;
+  margin-bottom:0;
+  margin-top:80px;
+}
+ 
+#contact h1{
+  color:#fff;
+}
+#contact .contact-info{
+  text-transform:uppercase;
+  color:#1b6db4;
+  font-size:20px;
+}
+#contact .contact-info p{
+  margin-bottom:25px;
+}
+#contact .contact-info p>span{
+  font-family:vegurlight, sans-serif;
+}
+#contact .contact-info p.phone{
+  color:#6d6e70;
+}
+#contact .contact-info .follow-us{
+  color:#fff;
+  font-size:24px;
+}
+#contact .contact-info .social>a{
+  font-size:30px;
+  color:#000;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+#contact .contact-info .fa-stack-2x{
+  color:#fff;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+#contact .contact-info .social>a:hover,
+#contact .contact-info .social>a:focus{
+  color:#fff;
+}
+#contact .contact-info .social>a:hover .fa-stack-2x,
+#contact .contact-info .social>a:focus .fa-stack-2x{
+  color:#6d6e70;
+}
+.contact-form h2{
+  color:#1b6db4;
+  font-size:24px;
+  text-transform:uppercase;
+}
+.contact-form .form-control{
+  color:#fff;
+  background-color:#6d6e70;
+  border-radius:0;
+  border-color:#6d6e70;
+}
+.contact-form .form-control::-webkit-input-placeholder{
+  color:#fff;
+}
+.contact-form .form-control::-moz-placeholder{
+  color:#fff;
+}
+.contact-form .form-control:-ms-input-placeholder{
+  color:#fff;
+}
+.contact-form .form-control:-moz-placeholder{
+  color:#fff;
+}
+.submit{
+  text-align:right;
+}
+.btn-default{
+  background-color:transparent;
+  color:#fff;
+  border:1px solid #1b6db4;
+  padding:2px 25px;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+.btn-default:hover,
+.btn-default:focus{
+  background-color:#1b6db4;
+  border-color:#1b6db4;
+  color:#fff;
+}
+
+.acf-map{
+  width:100%;
+  height:550px;
+}
+.acf-map img{
+  max-width:inherit !important;
+}
+
+footer{
+  padding-top:40px;
+  padding-bottom:40px;
+}
+.footer-nav{
+  column-count:2;
+}
+.footer-nav>li>a{
+  color:#fff;
+  text-transform:uppercase;
+  display:block;
+  padding-bottom:15px;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+.footer-nav>li>a:hover,
+.footer-nav>li>a:focus{
+  color:#1b6db4;
+  text-decoration:none;
+}
+.footer-contact-info>p{
+  text-align:right;
+  color:#1b6db4;
+  font-size:20px;
+  text-transform:uppercase;
+}
+footer .social{
+  text-align:right;
+}
+footer .social>a{
+  color:#000;
+  font-size:24px;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+footer .social>a .fa-stack-2x{
+  color:#fff;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+footer .social>a:hover,
+footer .social>a:focus{
+  color:#fff;
+}
+footer .social>a:hover .fa-stack-2x,
+footer .social>a:focus .fa-stack-2x{
+  color:#6d6e70;
+}
+.copyright{
+  text-align:center;
+  color:#fff;
+  margin-top:40px;
+}
+.copyright>p{
+  margin-bottom:0;
+}
+.copyright>p>a{
+  color:#fff;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+.copyright>p>a:hover,
+.copyright>p>a:focus{
+  color:#1b6db4;
+  text-decoration:none;
 }
 
 
-@media (max-width:768px){
+@media (max-width:767px){
+  #years .text-right{
+    text-align:center;
+  }
+  #years h2{
+    text-align:center;
+    margin-top:10px;
+  }
+  #hp-hero .caption>p{
+    margin-top:20px;
+  }
+  .footer-contact-info>p{
+    text-align:center;
+  }
+  footer .social{
+    text-align:center;
+  }
 }
 @media (max-width:991px){
   #navbar{
@@ -184,6 +466,15 @@ body{
   }
   #hp-hero{
     padding-top:120px;
+  }
+  #testimonial-slider:before{
+    left:0;
+  }
+  #testimonial-slider:after{
+    right:0;
+  }
+  .quick-links .btn-main{
+    margin-left:15px;
   }
 }
 @media (min-width:992px){
