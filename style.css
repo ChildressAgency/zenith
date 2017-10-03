@@ -71,6 +71,10 @@ section{
   padding-top:40px;
   padding-bottom:40px;
 }
+section#google-map{
+  padding-top:0;
+  padding-bottom:0;
+}
 
 .quick-links .social{
   text-align:center;
@@ -179,6 +183,7 @@ section{
   background-repeat:repeat-x;
   background-size:contain;
   background-position:center top;
+  padding-bottom:60px;
 }
 
 #testimonials{
@@ -186,6 +191,8 @@ section{
   background-repeat:repeat;
   background-size:contain;
   background-position:center center;
+  padding-top:40px;
+  padding-bottom:40px;
 }
 #testimonials.no-bg{
   background-image:none;
@@ -441,7 +448,7 @@ footer .social>a:focus .fa-stack-2x{
 article h1{
   text-align:center;
 }
-#main>.container{
+#main>.container.narrow{
   max-width:750px;
 }
 .code-list{
@@ -459,6 +466,46 @@ article h1{
 }
 .code-list ul>li{
   margin-bottom:25px;
+}
+
+.aog-info{
+  text-align:center;
+}
+.aog-info .page-title{
+  color:#fff;
+}
+.aog-info p{
+  font-family:vegurbold, sans-serif;
+  text-transform:uppercase;
+  margin-bottom:0;
+  letter-spacing:2px;
+}
+.aog-info p.phone{
+  font-size:30px;
+  letter-spacing:normal;
+  font-family:vegurregular, sans-serif;
+}
+.aog-info p.email{
+  font-size:24px;
+  color:#1b6db4;
+}
+.corporate-info p>span{
+  font-family:vegurlight, sans-serif;
+}
+.corporate-info ul{
+  list-style:none;
+  padding-left:0;
+}
+
+.dual-image:after{
+  content:"";
+  display:table;
+  clear:both;
+}
+.dual-image>img{
+  width:50%;
+  height:auto;
+  float:left;
 }
 
 
@@ -482,6 +529,10 @@ article h1{
 }
 @media (min-width:768px){
   .code-list ul{
+    column-count:2;
+    column-gap:40px;
+  }
+  .corporate-info ul{
     column-count:2;
     column-gap:40px;
   }
