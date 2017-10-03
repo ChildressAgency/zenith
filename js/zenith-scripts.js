@@ -1,6 +1,5 @@
 /*
  Normalize Carousel Heights - pass in Bootstrap Carousel items. https://coderwall.com/p/uf2pka/normalize-twitter-bootstrap-carousel-slide-heights
-also try: https://stackoverflow.com/questions/41626960/how-to-smooth-transition-between-elements-of-different-heights-in-bootstrap-caro
 */
 $.fn.carouselHeights = function(){
   var items = $(this), //grab all slides
