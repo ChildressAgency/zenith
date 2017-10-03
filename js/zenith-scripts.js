@@ -58,4 +58,20 @@ jQuery(document).ready(function($){
     });
   }
 
+  $('#teamModal').on('show.bs.modal', function(event){
+    var member = $(event.relatedTarget);
+    var memberName = member.data('member_name');
+    var memberTitle = member.data('member_title');
+    var memberNameTitle = memberName + '<span>' + memberTitle + '</span>';
+    var memberEmail = member.data('member_email');
+    var memberBio = member.data('member_bio');
+    var memberImage = member.data('member_image');
+
+    var modal = $(this);
+    modal.find('#memberImage').attr('src', memberImage).attr('alt', memberName);
+    modal.find('#memberName').html(memberNameTitle);
+    modal.find('.member-email').text(memberEmail);
+    modal.find('.modal-body').html(memberBio);
+  });
+
 });
