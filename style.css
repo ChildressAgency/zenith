@@ -61,10 +61,13 @@ body{
   text-decoration:none;
 }
 
-h1, h2, h3{
+h1, h2, h3, h4{
   color:#1b6db4;
   text-transform:uppercase;
   font-family:vegurbold, sans-serif;
+}
+a:focus{
+  outline:none;
 }
 
 section{
@@ -566,6 +569,72 @@ article h1{
   padding-bottom:40px;
 }
 
+#departments ul{
+  list-style:none;
+  padding-left:none;
+}
+#departments ul>li>p{
+  font-size:16px;
+}
+#departments ul>li>p>span{
+  font-family:vegurlight, sans-serif;
+}
+
+.team-member{
+  text-align:center;
+  margin-top:40px;
+  max-width:200px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.team-member h4>span{
+  display:block;
+  color:#fff;
+  font-family:vegurlight, sans-serif;
+  font-size:16px;
+}
+.read-more{
+  display:inline-block;
+  color:#fff;
+  font-family:vegurbold, sans-serif;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
+}
+.read-more:hover,
+.read-more:focus{
+  color:#1b6db4;
+  text-decoration:none;
+}
+
+.modal-content{
+  background-color:rgba(45,41,42,.9);
+  border-radius:0;
+}
+.modal-header{
+  border:none;
+}
+.modal-header h4{
+  margin-top:0;
+}
+.modal-header h4>span{
+  color:#fff;
+  font-family:vegurregular, sans-serif;
+  display:block;
+  font-size:16px;
+}
+#teamModal .close{
+  color:#fff;
+  opacity:1;
+  text-shadow:none;
+  font-family:vegurlight, sans-serif;
+  font-size:54px;
+  font-weight:lighter;
+  position:absolute;
+  right:10px;
+  top:5px;
+  z-index:9;
+}
+
 
 @media (max-width:767px){
   #years .text-right{
@@ -591,6 +660,10 @@ article h1{
     column-gap:40px;
   }
   .corporate-info ul{
+    column-count:2;
+    column-gap:40px;
+  }
+  #departments ul{
     column-count:2;
     column-gap:40px;
   }
