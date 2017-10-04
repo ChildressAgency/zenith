@@ -746,10 +746,10 @@ article h1{
   list-style:none;
   padding-left:0;
 }
-#consignments .media h2{
+.media h2{
   margin-top:0;
 }
-#consignments ul>li>.media{
+ul>li>.media{
   margin-bottom:25px;
 }
 #exchange-pool{
@@ -760,6 +760,34 @@ article h1{
   background-repeat:no-repeat;
   background-size:cover;
   text-align:center;
+}
+
+.quality-statement{
+  margin-top:40px;
+  text-align:center;
+  max-width:250px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.quality-policy{
+  margin-top:40px;
+}
+
+#certs-docs{
+  background-image:url(images/working-on-helicopter-wide.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+}
+.media.document{
+  margin-bottom:40px;
+}
+.media.document .media-header{
+  margin-top:0;
+  margin-bottom:0;
+}
+.two-col-num-list{
+  margin-top:40px;
 }
 
 
@@ -780,6 +808,9 @@ article h1{
   footer .social{
     text-align:center;
   }
+  #certs-docs{
+    background-position:right center;
+  }
 }
 @media (min-width:768px){
   .code-list ul{
@@ -799,6 +830,10 @@ article h1{
     column-gap:40px;
   }
   #consignments ul{
+    column-count:2;
+    column-gap:40px;
+  }
+  .two-col-num-list{
     column-count:2;
     column-gap:40px;
   }
