@@ -1,3 +1,4 @@
+<?php if(!is_front_page()){ get_template_part('partials/testimonials', 'section'); } ?>
   <section id="contact">
     <div class="container">
       <div class="row">
