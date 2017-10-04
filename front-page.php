@@ -1,3 +1,4 @@
+<?php get_header(); ?>
   <section id="hp-hero">
     <div class="caption-wrapper">
       <div class="caption">
@@ -59,3 +60,4 @@
       </div>
     </div>
   </section>
+<?php get_footer(); ?>
