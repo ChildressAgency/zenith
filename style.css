@@ -44,11 +44,13 @@ body{
 
 a{
   color:#fff;
+  -webkit-transition:all .3s ease;
+  transition:all .3s ease;
 }
 a:hover,
 a:focus{
-  color:#fff;
-  text-decoration:underline;
+  color:#1b6db4;
+  text-decoration:none;
 }
 h1, h2, h3, h4{
   color:#1b6db4;
@@ -663,6 +665,62 @@ article h1{
   right:10px;
   top:5px;
   z-index:9;
+}
+
+#latestNews{
+  background-image:url(images/news-bg.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#latestNews h1{
+  text-align:center;
+}
+#latestNews img{
+  margin-top:40px;
+}
+.blog-summary{
+  margin-top:40px;
+}
+.blog-summary h4{
+  margin-top:0;
+  margin-bottom:0;
+}
+.blog-summary .blog-subtitle{
+  color:#fff;
+  font-family:vegurregular, sans-serif;
+}
+.blog-summary p{
+  margin-bottom:0;
+}
+.blog-summary .blog-author-date{
+  margin-bottom:10px;
+}
+.wp-pagenavi{
+  margin-top:40px;
+  text-align:center;
+}
+.wp-pagenavi a, .wp-pagenavi span{
+  border:none;
+}
+
+.archive-nav{
+  margin-top:40px;
+}
+.archive-nav ul{
+  list-style:none;
+  padding-left:0;
+  column-count:3;
+  column-gap:0px;
+  text-transform:uppercase;
+}
+
+.job-listing{
+  margin-top:40px;
+  text-align:center;
+}
+.job-listing h3,
+.job-listing p{
+  text-align:left;
 }
 
 
