@@ -18,123 +18,61 @@
   <section id="latestNews">
     <div class="container narrow">
       <h1>Latest News</h1>
-      <div class="row">
-        <div class="col-sm-4">
-          <img src="images/blog-placeholder.jpg" class="img-responsive center-block" alt="" />
-        </div>
-        <div class="col-sm-8">
-          <div class="blog-summary">
-            <h4 class="blog-title">EXIT STRATEGY - the consignment dilemma</h4>
-            <h4 class="blog-subtitle">Hold, Sell or Consign</h4>
-            <p class="blog-author-date">by: Donald Capwell<br />October 9, 2003</p>
-            <p>As an airline or corporate operator, you have a few options to deal with excess parts after retiring or selling an aircraft...</p>
-            <a href="#" class="read-more">(see more)</a>
+      <?php if(have_posts()): while(have_posts()): the_post(); ?>
+        <div class="row">
+          <div class="col-sm-4">
+            <?php 
+              if(has_post_thumbnail()){
+                the_post_thumbnail('full', array('class' => 'img-responsive center-block'));
+              }
+              else{
+                echo '<img src="' . get_stylesheet_directory_uri() . '/images/blog-placeholder.jpg" class="img-responsive center-block" alt="" />';
+              }
+            ?>
+          </div>
+          <div class="col-sm-8">
+            <div class="blog-summary">
+              <h4 class="blog-title"><?php the_title(); ?></h4>
+              <h4 class="blog-subtitle"><?php the_field('post_subtitle'); ?></h4>
+              <p class="blog-author-date">by: <?php the_author(); ?><br /><?php echo get_the_date('F j, Y'); ?></p>
+              <?php the_excerpt(); ?>
+              <a href="<?php the_permalink(); ?>" class="read-more">(see more)</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <img src="images/blog-placeholder.jpg" class="img-responsive center-block" alt="" />
-        </div>
-        <div class="col-sm-8">
-          <div class="blog-summary">
-            <h4 class="blog-title">EXIT STRATEGY - the consignment dilemma</h4>
-            <h4 class="blog-subtitle">Hold, Sell or Consign</h4>
-            <p class="blog-author-date">by: Donald Capwell<br />October 9, 2003</p>
-            <p>As an airline or corporate operator, you have a few options to deal with excess parts after retiring or selling
-              an aircraft...</p>
-            <a href="#" class="read-more">(see more)</a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <img src="images/blog-placeholder.jpg" class="img-responsive center-block" alt="" />
-        </div>
-        <div class="col-sm-8">
-          <div class="blog-summary">
-            <h4 class="blog-title">EXIT STRATEGY - the consignment dilemma</h4>
-            <h4 class="blog-subtitle">Hold, Sell or Consign</h4>
-            <p class="blog-author-date">by: Donald Capwell<br />October 9, 2003</p>
-            <p>As an airline or corporate operator, you have a few options to deal with excess parts after retiring or selling
-              an aircraft...</p>
-            <a href="#" class="read-more">(see more)</a>
-          </div>
-        </div>
-      </div>
-      <div class="wp-pagenavi">
-        <span class="pages">Page 1 of 8</span>
-        <a href="#" class="first">&lt; First</a>
-        <a href="#" class="previouspostslink" rel="prev"><<</a>
-        <a href="#" class="page smaller">1</a>
-        <span class="current">2</span>
-        <a href="#" class="page larger">3</a>
-        <a href="#" class="page larger">4</a>
-        <a href="#" class="page larger">5</a>
-        <span class="extend">...</span>
-        <a href="#" class="nextpostslink" rel="next">>></a>
-        <a href="#" class="last">Last &gt;</a>
-      </div>
+      <?php endwhile; endif; wp_pagenavi(); ?>
       <div class="archive-nav">
         <h3 style="text-align:center;">Archives</h3>
         <div class="row">
-          <div class="col-sm-4">
-            <div class="archive-year">
-              <h4><a href="#">2017</a></h4>
-              <ul>
-                <li><a href="#">Jan</a></li>
-                <li><a href="#">Feb</a></li>
-                <li><a href="#">Mar</a></li>
-                <li><a href="#">Apr</a></li>
-                <li><a href="#">May</a></li>
-                <li><a href="#">Jun</a></li>
-                <li><a href="#">Jul</a></li>
-                <li><a href="#">Aug</a></li>
-                <li><a href="#">Sep</a></li>
-                <li><a href="#">Oct</a></li>
-                <li><a href="#">Nov</a></li>
-                <li><a href="#">Dec</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="archive-year">
-              <h4><a href="#">2016</a></h4>
-              <ul>
-                <li><a href="#">Jan</a></li>
-                <li><a href="#">Feb</a></li>
-                <li><a href="#">Mar</a></li>
-                <li><a href="#">Apr</a></li>
-                <li><a href="#">May</a></li>
-                <li><a href="#">Jun</a></li>
-                <li><a href="#">Jul</a></li>
-                <li><a href="#">Aug</a></li>
-                <li><a href="#">Sep</a></li>
-                <li><a href="#">Oct</a></li>
-                <li><a href="#">Nov</a></li>
-                <li><a href="#">Dec</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="archive-year">
-              <h4><a href="#">2015</a></h4>
-              <ul>
-                <li><a href="#">Jan</a></li>
-                <li><a href="#">Feb</a></li>
-                <li><a href="#">Mar</a></li>
-                <li><a href="#">Apr</a></li>
-                <li><a href="#">May</a></li>
-                <li><a href="#">Jun</a></li>
-                <li><a href="#">Jul</a></li>
-                <li><a href="#">Aug</a></li>
-                <li><a href="#">Sep</a></li>
-                <li><a href="#">Oct</a></li>
-                <li><a href="#">Nov</a></li>
-                <li><a href="#">Dec</a></li>
-              </ul>
-            </div>
-          </div>
+          <?php
+            global $wpdb;
+            $year_prev = null;
+            $months = $wpdb->get_results("
+              SELECT DISTINCT MONTH(post_date) as month, YEAR(post_date) as year
+              FROM $wpdb->posts
+              WHERE post_status = 'publish'
+                AND post_type = 'post'
+              GROUP BY month, year
+              ORDER BY post_date DESC");
+
+            if($months):
+              $i=0;
+              foreach($months as $month){
+                $year_current = $month->year;
+                if($year_current != $year_prev){
+                  if($i%3==0){ echo '<div class="clearfix"></div>'; }
+                  echo '<div class="col-sm-4"><div class="archive-year"><h4>' . $month->year . '</h4><ul>' ;
+                }
+
+                echo '<li><a href="' . home_url() . '/' . $month->year . '/' . date("m", mktime(0,0,0,$month->month,1,$month->year)) . '">' . date_i18n("M", mktime(0,0,0,$month->month,1,$month->year)) . '</a></li>';
+
+                if($year_current != $year_prev){
+                  echo '</ul></div></div>';
+                }
+
+                $year_prev = $year_current;
+                $i++;
+              } ?>
         </div>
       </div>
     </div>
@@ -143,21 +81,29 @@
     <div class="container narrow">
       <article>
         <h1 class="page-title">Job Postings</h1>
-        <p>Thank you for your interest in Zenith Aviation! Please review each position below. If you feel you are a well-qualified candidate for one of these openings, please forward your resume with cover letter (stating the position you are interested in), as well as salary requirements to:</p>
-        <p class="text-center"><a href="mailto:#">JOBS@ZENITHAVIATION.COM</a></p>
+        <?php the_field('job_posting_intro_content', $blog_page_id); ?>
       </article>
-      <div class="job-listing">
-        <h3>Part Time Quality Assurance / Inventory Control Specialists</h3>
-        <p>Several positions are open to fill a QA / IC Specialist role ASAP. Full Time and Part Time (permanent) positions are available. We offer a flexible work schedule in a casual environment for Part Time workers (15-20 hours per month). Normal work hours are 9am - 5:30pm, and we will work around your availability within these hours.</p>
-        <a href="#" class="btn-main">See Advertisement Here</a>
-      </div>
-      <div class="job-listing">
-        <h3>Part Time Quality Assurance / Inventory Control Specialists</h3>
-        <p>Several positions are open to fill a QA / IC Specialist role ASAP. Full Time and Part Time (permanent) positions
-          are available. We offer a flexible work schedule in a casual environment for Part Time workers (15-20 hours per
-          month). Normal work hours are 9am - 5:30pm, and we will work around your availability within these hours.</p>
-        <a href="#" class="btn-main">See Advertisement Here</a>
-      </div>
+      <?php
+        $job_listings = new WP_Query(array(
+          'post_type' => 'job_listing',
+          'post_status' => 'publish',
+          'posts_per_page' => -1,
+          'meta_query' => array(
+            array(
+              'key' => 'active',
+              'compare' => '==',
+              'value' => '1'
+            )
+          )
+        ));
+
+        if($job_listings->have_posts()): while($job_listings->have_posts()): $job_listings->the_post(); ?>
+          <div class="job-listing">
+            <h3><?php the_title(); ?></h3>
+            <?php the_field('job_short_description'); ?>
+            <a href="<?php echo get_field('external_job_listing_link') ? get_field('external_job_listing_link') : get_the_permalink(); ?>" class="btn-main">See Posting Here</a>
+          </div>
+      <?php endwhile; endif; wp_reset_postdata(); ?>
     </div>
   </section>
 <?php get_footer(); ?>
