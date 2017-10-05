@@ -73,6 +73,7 @@ function zenith_styles(){
   wp_enqueue_style('zenith');
 }
 
+add_theme_support('post-thumbnails');
 register_nav_menu( 'header-nav', 'Header Navigation' );
 /**
  * Class Name: wp_bootstrap_navwalker
@@ -279,6 +280,37 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			echo $fb_output;
 		}
 	}
+}
+
+add_action('init', 'zenith_create_post_types');
+function zenith_create_post_types(){
+  $jobs_labels = array(
+    'name' => 'Jobs',
+    'singular_name' => 'Job',
+    'menu_name' => 'Jobs',
+    'add_new_item' => 'Add New Job',
+    'search_items' => 'Search Jobs',
+    'edit_item' => 'Edit Job',
+    'view_item' => 'View Job',
+    'all_items' => 'All Jobs',
+    'new_item' => 'New Job',
+    'not_found' => 'Job Not Found'
+  );
+  $jobs_args = array(
+    'labels' => $jobs_labels,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-businessman',
+    'query_var' => 'job_listing',
+    'support' => array(
+      'title',
+      'editor',
+      'custom_fields',
+      'revisions'
+    )
+  );
+  register_post_type('job_listing', $jobs_args);
 }
 
 add_action('acf/init', 'zenith_acf_init');
