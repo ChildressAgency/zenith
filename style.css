@@ -734,14 +734,14 @@ article h1{
   text-align:left;
 }
 
-.available-parts h3{
+.parts-section h3{
   text-align:center;
 }
-.available-parts ul{
+.parts-section ul{
   list-style:none;
   padding-left:0
 }
-.available-parts ul>li{
+.parts-section ul>li{
   margin-bottom:10px;
 }
 #consignments{
@@ -796,6 +796,26 @@ ul>li>.media{
 .two-col-num-list{
   margin-top:40px;
 }
+.parts-section ol{
+  list-style:none;
+}
+.parts-section ol>li{
+  counter-increment:item;
+  margin-bottom:25px;
+  position:relative;
+  display:inline-block;
+}
+.parts-section ol>li:before{
+  margin-right:10px;
+  content:counter(item)".";
+  color:#1b6db4;
+  font-size:30px;
+  display:inline-block;
+  font-family:vegurbold, sans-serif;
+  position:absolute;
+  top:-6px;
+  left:-30px;
+}
 
 
 @media (max-width:767px){
@@ -832,13 +852,13 @@ ul>li>.media{
     column-count:2;
     column-gap:40px;
   }
-  .available-parts ul{
+  .parts-section ul{
     column-count:2;
     column-gap:40px;
   }
-  #consignments ul{
+  .parts-section ol{
     column-count:2;
-    column-gap:40px;
+    column-gap:70px;
   }
   .two-col-num-list{
     column-count:2;
@@ -909,7 +929,7 @@ ul>li>.media{
   #main{
     padding-top:140px;
   }
-  .available-parts ul{
+  .parts-section ul{
     column-count:3;
     column-gap:40px;
   }
