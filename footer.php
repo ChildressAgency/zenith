@@ -3,6 +3,7 @@
     get_template_part('partials/testimonials', 'section'); 
   } 
 ?>
+<?php if(!is_page('contact')): ?>
   <section id="contact">
     <div class="container">
       <div class="row">
@@ -22,6 +23,7 @@
       </div>
     </div>
   </section>
+<?php endif; ?>
   <section id="google-map">
     <?php
       $location = get_field('location', 'option');
