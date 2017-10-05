@@ -1,5 +1,5 @@
 <?php 
-  if(!is_front_page() && !is_page('condition-codes')){ 
+  if(!is_front_page() && !is_page('condition-codes') && !is_page('quality')){ 
     get_template_part('partials/testimonials', 'section'); 
   } 
 ?>
