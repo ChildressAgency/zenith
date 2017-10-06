@@ -33,25 +33,60 @@
         </button>
       </div>
       <div class="quick-links hidden-xs hidden-sm">
-        <a href="<?php the_field('header_aog_support_link', 'option'); ?>" class="btn-main">AOG Support</a>
-        <a href="<?php the_field('header_careers_link', 'option'); ?>" class="btn-main">Careers</a>
+        <a href="<?php echo esc_url(home_url('parts-services/#aog-support')); ?>" class="btn-main">AOG Support</a>
+        <a href="<?php echo esc_url(home_url('careers/#jobPopstings')); ?>" class="btn-main">Careers</a>
         <?php get_template_part('partials/social', 'section'); ?>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li<?php if(is_page('about')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('about'); ?>">About</a></li>
-          <li<?php if(is_page('products-services')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('products-services'); ?>">Products &amp; Services</a></li>
-          <li<?php if(is_page('quality')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('quality'); ?>">Quality</a></li>
-          <li<?php if(is_home()){ echo ' class="active"'; } ?>><a href="<?php echo home_url('news-info'); ?>">News &amp; Info</a></li>
-          <li<?php if(is_page('contact')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('contact'); ?>">Contact</a></li>
-          <li class="visible-xs-block visible-sm-block">
-            <div class="quick-links">
-              <a href="<?php the_field('header_aog_support_link', 'option'); ?>" class="btn-main">AOG Support</a>
-              <a href="<?php the_field('header_careers_link', 'option'); ?>" class="btn-main">Careers</a>
-              <?php get_template_part('partials/social', 'section'); ?>
-            </div>            
-          </li>
-        </ul>
-      </div>
+
+      <?php
+        //mobile menu item 
+        $mm = '<li class="visible-xs-block visible-sm-block"><div class="quick-links">';
+        $mm .= '<a href="' . esc_url(home_url('parts-services/#aog-support')) . '" class="btn-main">AOG Support</a>';
+        $mm .= '<a href="' . esc_url(home_url('careers/#jobPostings')) . '" class="btn-main">Careers</a>';
+        $mm .= get_template_part('partials/social', 'section');
+        $mm .= '</div></li>';
+              
+        $header_nav_args = array(
+          'theme_location' => 'header-nav',
+          'container' => 'div',
+          'container_class' => 'navbar-collapse collapse',
+          'container_id' => 'navbar',
+          'menu' => '',
+          'menu_class' => 'nav navbar-nav',
+          'menu_id' => '',
+          'echo' => true,
+          'fallback_cb' => 'zenith_fallback_header_menu',
+          'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $mm . '</ul>',
+          'depth' => 2,
+          'walker' => new wp_bootstrap_navwalker()
+        );
+        wp_nav_menu($header_nav_args);
+
+        function zenith_fallback_header_menu(){ ?>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                  <li<?php if(is_page('history')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('history'); ?>">History</a></li>
+                  <li<?php if(is_page('executive-team')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('executive-team'); ?>">Executive Team</a></li>
+                  <li<?php if(is_page('facility')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('facility'); ?>">Facility</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products &amp; Services <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                  <li<?php if(is_page('parts-services')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('parts-services'); ?>">Parts &amp; Services</a></li>
+                  <li<?php if(is_page('distributorships')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('distributorships'); ?>">Distributorships</a></li>
+                  <li<?php if(is_page('condition-codes')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('condition-codes'); ?>">Condition Codes</a></li>
+                </ul>
+              </li>
+              <li<?php if(is_page('quality')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('quality'); ?>">Quality</a></li>
+              <li<?php if(is_home()){ echo ' class="active"'; } ?>><a href="<?php echo home_url('news-info'); ?>">News &amp; Info</a></li>
+              <li<?php if(is_page('contact')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('contact'); ?>">Contact</a></li>
+              <?php echo $mm; ?>
+            </ul>
+          </div>
+      <?php  } ?>
     </div>
   </nav>
