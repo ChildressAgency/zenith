@@ -3,14 +3,10 @@
     <?php 
       //get static blog page content field
       $blog_page = get_page_by_path('news-information');
-      $blog_page_id = $blog_page->ID;
-      $news_info = new WP_Query(array('page_id' => $blog_page_id));
-      if($news_info->have_posts()): ?>
+      $blog_page_id = $blog_page->ID; ?>
         <div class="container narrow">
           <article>
-            <?php while($news_info->have_posts()): $news_info->the_post(); ?>
-              <?php the_content(); ?>
-            <?php endwhile; ?>
+            <?php the_field('intro_content', $blog_page_id); ?>
           </article>
         </div>
     <?php endif; wp_reset_postdata(); ?>
@@ -101,7 +97,7 @@
           <div class="job-listing">
             <h3><?php the_title(); ?></h3>
             <?php the_field('job_short_description'); ?>
-            <a href="<?php echo get_field('external_job_listing_link') ? get_field('external_job_listing_link') : get_the_permalink(); ?>" class="btn-main">See Posting Here</a>
+            <a href="<?php the_field('job_posting_link'); ?>" class="btn-main">See Posting Here</a>
           </div>
       <?php endwhile; endif; wp_reset_postdata(); ?>
     </div>

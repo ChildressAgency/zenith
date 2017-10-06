@@ -332,6 +332,7 @@ if(function_exists('acf_add_options_page')){
     'menu_title' => 'Testimonials',
     'menu_slug' => 'testimonials',
     'capability' => 'edit_posts',
+    'icon_url' => 'dashicons-format-quote',
     'redirect' => false
   ));
 }
