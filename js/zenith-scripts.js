@@ -32,7 +32,7 @@ $.fn.carouselHeights = function(){
 
 jQuery(document).ready(function($){
 
-  $('#testimonial-slider .carousel-inner').carouselHeights();
+  $('#testimonial-slider .carousel-inner .item').carouselHeights();
 
   //home-hero continue
   $('.scrolldown').on('click', function (e) {

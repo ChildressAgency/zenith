@@ -34,7 +34,7 @@
       </div>
       <div class="quick-links hidden-xs hidden-sm">
         <a href="<?php echo esc_url(home_url('parts-services/#aog-support')); ?>" class="btn-main">AOG Support</a>
-        <a href="<?php echo esc_url(home_url('careers/#jobPopstings')); ?>" class="btn-main">Careers</a>
+        <a href="<?php echo esc_url(home_url('careers/#jobPostings')); ?>" class="btn-main">Careers</a>
         <?php get_template_part('partials/social', 'section'); ?>
       </div>
 
@@ -43,8 +43,22 @@
         $mm = '<li class="visible-xs-block visible-sm-block"><div class="quick-links">';
         $mm .= '<a href="' . esc_url(home_url('parts-services/#aog-support')) . '" class="btn-main">AOG Support</a>';
         $mm .= '<a href="' . esc_url(home_url('careers/#jobPostings')) . '" class="btn-main">Careers</a>';
-        $mm .= get_template_part('partials/social', 'section');
-        $mm .= '</div></li>';
+        $mm .= '<div class="social">';
+
+        $facebook = get_field('facebook', 'option');
+        $twitter = get_field('twitter', 'option');
+        $linkedin = get_field('linkedin', 'option');
+        if($linkedin){
+          $mm .= '<a href="' . $linkedin . '" class="fa-stack"><i class="fa fa-stop fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x"></i></a>';
+        }
+        if($facebook){
+          $mm .= '<a href="' . $facebook . '" class="fa-stack"><i class="fa fa-stop fa-stack-2x"></i><i class="fa fa-facebook-official fa-stack-1x"></i></a>';
+        }
+        if($twitter){
+          $mm .= '<a href="' . $twitter . '" class="fa-stack"><i class="fa fa-stop fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></a>';
+        }
+
+        $mm .= '</div></div></li>';
               
         $header_nav_args = array(
           'theme_location' => 'header-nav',
@@ -62,7 +76,28 @@
         );
         wp_nav_menu($header_nav_args);
 
-        function zenith_fallback_header_menu(){ ?>
+        function zenith_fallback_header_menu(){ 
+          //mobile menu item 
+          $mm = '<li class="visible-xs-block visible-sm-block"><div class="quick-links">';
+          $mm .= '<a href="' . esc_url(home_url('parts-services/#aog-support')) . '" class="btn-main">AOG Support</a>';
+          $mm .= '<a href="' . esc_url(home_url('careers/#jobPostings')) . '" class="btn-main">Careers</a>';
+          $mm .= '<div class="social">';
+
+          $facebook = get_field('facebook', 'option');
+          $twitter = get_field('twitter', 'option');
+          $linkedin = get_field('linkedin', 'option');
+          if($linkedin){
+            $mm .= '<a href="' . $linkedin . '" class="fa-stack"><i class="fa fa-stop fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x"></i></a>';
+          }
+          if($facebook){
+            $mm .= '<a href="' . $facebook . '" class="fa-stack"><i class="fa fa-stop fa-stack-2x"></i><i class="fa fa-facebook-official fa-stack-1x"></i></a>';
+          }
+          if($twitter){
+            $mm .= '<a href="' . $twitter . '" class="fa-stack"><i class="fa fa-stop fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></a>';
+          }
+
+          $mm .= '</div></div></li>';
+          ?>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="dropdown">

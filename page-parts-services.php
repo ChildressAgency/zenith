@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  <main id="main" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/airplane-shadow.jpg); background-repeat:no-repeat; background-size:cover;">
+  <main id="main"<?php if(get_field('background_image')){ echo ' style="background-image:url(' . get_field('background_image') . ');' . get_field('background_image_css') . '"'; } ?>>
     <div class="container narrow">
       <h1 class="page-title">Products & Services</h1>
       <section id="government" class="parts-section">
