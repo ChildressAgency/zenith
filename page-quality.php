@@ -32,17 +32,17 @@
         <div class="col-sm-7 col-sm-offset-5">
           <h1 class="page-title">Certifications & Documents</h1>
           <?php if(have_rows('documents')): while(have_rows('documents')): the_row(); 
-            $document = get_field('document'); ?>
+            $document = get_sub_field('document'); ?>
             <div class="media document">
               <div class="media-left">
-                <a href="<?hp echo $document['url']; ?>" class=""><img src="<?php echo get_stylesheet_directroy_uri(); ?>/images/icon-document.png" class="media-object" alt="" /></a>
+                <a href="<?php echo $document['url']; ?>" class=""><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon-document.png" class="media-object" alt="" /></a>
               </div>
               <div class="media-body">
                 <h3 class="media-header"><?php echo $document['title']; ?></h3>
                 <p><?php echo $document['caption']; ?></p>
               </div>
             </div>
-          <?php endif; ?>
+          <?php endwhile; endif; ?>
         </div>
       </div>
     </div>

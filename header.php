@@ -112,7 +112,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products &amp; Services <i class="fa fa-caret-down"></i></a>
                 <ul class="dropdown-menu">
                   <li<?php if(is_page('parts-services')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('parts-services'); ?>">Parts &amp; Services</a></li>
-                  <li<?php if(is_page('distributorships')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('distributorships'); ?>">Distributorships</a></li>
+                  <li<?php if(is_page('distributorships')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('distributorship'); ?>">Distributorship</a></li>
                   <li<?php if(is_page('condition-codes')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('condition-codes'); ?>">Condition Codes</a></li>
                 </ul>
               </li>

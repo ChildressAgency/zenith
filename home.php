@@ -2,14 +2,13 @@
   <main id="main">
     <?php 
       //get static blog page content field
-      $blog_page = get_page_by_path('news-information');
+      $blog_page = get_page_by_path('news-info');
       $blog_page_id = $blog_page->ID; ?>
         <div class="container narrow">
           <article>
             <?php the_field('intro_content', $blog_page_id); ?>
           </article>
         </div>
-    <?php endif; wp_reset_postdata(); ?>
   </main>
   <section id="latestNews">
     <div class="container narrow">
@@ -51,7 +50,7 @@
               GROUP BY month, year
               ORDER BY post_date DESC");
 
-            if($months):
+            if($months){
               $i=0;
               foreach($months as $month){
                 $year_current = $month->year;
@@ -68,7 +67,8 @@
 
                 $year_prev = $year_current;
                 $i++;
-              } ?>
+              }
+            } ?>
         </div>
       </div>
     </div>

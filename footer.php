@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="col-sm-2">
-          <?php get_template_part('partial/social', 'section'); ?>
+          <?php get_template_part('partials/social', 'section'); ?>
         </div>
       </div>
       <div class="copyright">
