@@ -1,8 +1,8 @@
 <?php get_header(); ?>
-<?php if(get_field('background_image')): ?>
-  <div class="hero" style="background-image:url('<?php the_field('background_image'); ?>'); <?php the_field('background_image_css'); ?>"></div>
+<?php if(get_field('hero_image')): ?>
+  <div class="hero" style="background-image:url('<?php the_field('hero_image'); ?>'); <?php the_field('hero_image_css'); ?>"></div>
 <?php endif; ?>
-<main id="main">
+<main id="main"<?php if(get_field('background_image') || get_field('background_image_css')){ echo ' style="background-image:url(' . get_field('background_image') . ');' . get_field('background_image_css') . '"'; } ?>>
   <div class="container">
     <article>
       <?php if(have_posts()): while(have_posts()): the_post(); ?>

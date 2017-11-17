@@ -46,12 +46,46 @@
         </div>
       </div>
     </div>
+    <a href="#main" class="back-to-top">top <i class="fa fa-arrow-up"></i></a>
   </section>
-  <?php get_template_part('partials/testimonials', 'section'); ?>
+  <section id="condition-codes">
+    <div class="container narrow">
+      <article>
+        <h1>Condition Codes</h1>
+        <?php the_field('condition_codes_intro'); ?>
+      </article>
+      <div class="code-list">
+        <ul class="list-unstyled">
+          <?php if(have_rows('condition_codes')): while(have_rows('condition_codes')): the_row(); ?>
+            <li>
+              <h3><?php the_sub_field('condition_code'); ?></h3>
+              <?php the_sub_field('condition_code_description'); ?>
+            </li>
+          <?php endwhile; endif; ?>
+        </ul>
+        <h3>As Removed (AR)</h3>
+        <?php the_field('as_removed_condition_code_description'); ?>
+      </div>
+    </div>
+    <a href="#main" class="back-to-top">top <i class="fa fa-arrow-up"></i></a>
+  </section>
+  <section id="traceability">
+    <div class="container">
+      <article>
+        <?php the_field('traceability_section_content'); ?>
+      </article>
+    </div>
+    <a href="#main" class="back-to-top">top <i class="fa fa-arrow-up"></i></a>
+  </section>
   <section id="ethics-policy" class="parts-section">
     <div class="container">
       <h1>Zenith Ethics Policy</h1>
       <?php the_field('ethics_policy_section_content'); ?>
+      <p class="text-center">
+        <a href="<?php the_field('ethics_manual'); ?>" class="btn-main">Ethics Manual</a>
+      </p>
     </div>
+    <a href="#main" class="back-to-top">top <i class="fa fa-arrow-up"></i></a>
   </section>
+  <?php get_template_part('partials/testimonials', 'section'); ?>
 <?php get_footer(); ?>
