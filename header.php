@@ -34,7 +34,7 @@
       </div>
       <div class="quick-links hidden-xs hidden-sm">
         <a href="<?php echo esc_url(home_url('parts-services/#aog-support')); ?>" class="btn-main">AOG Support</a>
-        <a href="<?php echo esc_url(home_url('careers/#jobPostings')); ?>" class="btn-main">Careers</a>
+        <a href="<?php echo esc_url(home_url('news-info/#jobPostings')); ?>" class="btn-main">Careers</a>
         <?php get_template_part('partials/social', 'section'); ?>
       </div>
 

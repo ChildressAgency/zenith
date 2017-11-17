@@ -10,7 +10,7 @@
         <div class="col-sm-6">
           <h1>GET IN TOUCH</h1>
           <div class="contact-info">
-            <p><?php the_field('street_address', 'option'); ?><br /><span><?php the_field('city_state_zip', 'option'); ?></span></p>
+            <p><?php the_field('street_address', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?></p>
             <p class="phone"><?php the_field('phone_number', 'option'); ?> <span>Voice</span><br /><?php the_field('fax_number', 'option'); ?> <span>FAX</span></p>
             <p><?php the_field('email', 'option'); ?></p>
             <p class="follow-us">Follow us on social media</p>
@@ -25,13 +25,7 @@
   </section>
 <?php endif; ?>
   <section id="google-map">
-    <?php
-      $location = get_field('location', 'option');
-      if(!empty($location)): ?>
-        <div class="acf-map">
-          <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
-        </div>
-    <?php endif; ?>  
+    <?php the_field('google_map_embed_code', 'option'); ?>
   </section>
   <footer>
     <div class="container">

@@ -1,5 +1,8 @@
 <?php get_header(); ?>
-<main id="main"<?php if(get_field('background_image')){ echo ' style="background-image:url(' . get_field('background_image') . ');' . get_field('background_image_css') . '"'; } ?>>
+<?php if(get_field('background_image')): ?>
+  <div class="hero" style="background-image:url('<?php the_field('background_image'); ?>'); <?php the_field('background_image_css'); ?>"></div>
+<?php endif; ?>
+<main id="main">
   <div class="container">
     <article>
       <?php if(have_posts()): while(have_posts()): the_post(); ?>

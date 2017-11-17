@@ -72,6 +72,9 @@ section#google-map{
   padding-top:0;
   padding-bottom:0;
 }
+section#google-map>iframe{
+  width:100%;
+}
 .acf-map{
   width:100%;
   height:290px;
@@ -219,6 +222,12 @@ img.alignright{
   background-size:cover;
   background-position:right top;
   height:100vh;
+  display:table;
+  width:100%;
+  text-align:center;
+}
+#hp-hero .caption-wrapper{
+  display:table-row;
 }
 #hp-hero .caption{
   max-width:525px;
@@ -226,17 +235,21 @@ img.alignright{
   margin-right:auto;
   padding-left:15px;
   padding-right:15px;
+  display:table-cell;
 }
 #hp-hero .caption>p{
   font-size:18px;
   color:#6d6e70;
   text-transform:uppercase;
   text-align:center;
-  margin-top:100px;
+  margin-top:3%;
+  max-width:525px;
+  margin-left:auto;
+  margin-right:auto;
 }
 .scrolldown{
-  position:absolute;
-  bottom:60px;
+  position:relative;
+  bottom:auto;
   left:0px;
   right:0px;
   text-align:center;
@@ -253,6 +266,12 @@ img.alignright{
 .scrolldown:focus{
   text-decoration:none;
   color:#1a97d4;
+}
+
+.hero{
+  height:270px;
+  background-repeat:no-repeat;
+  background-size:cover;
 }
 
 #main{
@@ -931,6 +950,9 @@ ul>li>.media{
   #main{
     padding-top:120px;
   }
+  .hero+#main{
+    padding-top:0;
+  }
   #testimonial-slider:before{
     left:0;
   }
@@ -974,6 +996,9 @@ ul>li>.media{
   #hp-hero,
   #main{
     padding-top:140px;
+  }
+  .hero+#main{
+    padding-top:0px;
   }
   .parts-section ul{
     column-count:3;
