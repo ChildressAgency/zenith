@@ -336,3 +336,13 @@ if(function_exists('acf_add_options_page')){
     'redirect' => false
   ));
 }
+
+add_filter('oembed_dataparse', 'zenith_youtube_norel', 10, 3);
+function zenith_youtube_norel($return, $data, $url){
+  if($data->provider_name == 'YouTube'){
+    return str_replace('feature=oembed', 'feature=oembed&#038;rel=0', $return);
+  }
+  else{
+    return $return;
+  }
+}
