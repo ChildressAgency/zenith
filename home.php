@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-  <main id="main">
     <?php 
       //get static blog page content field
       $blog_page = get_page_by_path('news-info');
       $blog_page_id = $blog_page->ID; ?>
+  <main id="main"<?php if(get_field('hero_image', $blog_page_id)){ echo ' style="background-image:url(' . get_field('hero_image', $blog_page_id) . '");'; } ?>>
         <div class="container narrow">
           <article>
             <?php the_field('intro_content', $blog_page_id); ?>

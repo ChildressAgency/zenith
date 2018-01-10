@@ -31,7 +31,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-5">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/afra-logo.png" class="img-responsive center-block" alt="AFRA Logo" />
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/asa-logo.png" class="img-responsive center-block" alt="ASA Logo" />
         </div>
         <div class="col-sm-7">
           <div class="row">
