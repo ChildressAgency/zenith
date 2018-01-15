@@ -24,7 +24,8 @@
       <h1 class="page-title text-center">Executive Team</h1>
       <div class="row">
         <?php if(have_rows('executive_team')): $i=0; while(have_rows('executive_team')): the_row(); ?>
-          <div class="col-sm-3">
+          <?php if($i%3==0){ echo '<div class="clearfix"></div>'; } ?>
+          <div class="col-sm-4">
             <div class="team-member">
               <img src="<?php the_sub_field('team_member_image'); ?>" class="img-responsive center-block" alt="<?php the_sub_field('team_member_name'); ?>" />
               <h4><?php the_sub_field('team_member_name'); ?><span><?php the_sub_field('team_member_title'); ?></span></h4>
