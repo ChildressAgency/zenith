@@ -27,26 +27,19 @@
   <div class="title-section">
     <h1 class="page-title">Affiliations</h1>
   </div>
-  <section class="logos">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/asa-logo.png" class="img-responsive center-block" alt="ASA Logo" />
+  <?php
+    $affiliations = get_field('affiliation_logos');
+    if($affiliations): ?>
+      <section class="logos">
+        <div class="container">
+          <ul class="list-unstyled list-inline">
+            <?php foreach($affiliations as $affiliation): ?>
+              <li><img src="<?php echo $affiliation['url']; ?>" class="img-responsive center-block" alt="<?php echo $affiliation['alt']; ?>" /></li>
+            <?php endforeach; ?>
+          </ul>
         </div>
-        <div class="col-sm-7">
-          <div class="row">
-            <div class="col-sm-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/raa-logo.png" class="img-responsive center-block" alt="RAA Logo" />
-            </div>
-            <div class="col-sm-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/nbaa-logo.png" class="img-responsive center-block" alt="NBAA Logo" />
-            </div>
-          </div>
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/naval-aviation-logo.png" class="img-responsive center-block" alt="Naval Aviation Logo" />
-        </div>
-      </div>
-    </div>
-    <span class="shadow-left"></span>
-    <span class="shadow-right"></span>
-  </section>
+        <span class="shadow-left"></span>
+        <span class="shadow-right"></span>
+      </section>
+  <?php endif; ?>
 <?php get_footer(); ?>
