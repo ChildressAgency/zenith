@@ -69,7 +69,7 @@
     </div>
     <a href="#main" class="back-to-top">top <i class="fa fa-arrow-up"></i></a>
   </section>
-  <section id="traceability">
+  <section id="traceability" class="rivet-bg">
     <div class="container">
       <article>
         <?php the_field('traceability_section_content'); ?>
@@ -77,7 +77,7 @@
     </div>
     <a href="#main" class="back-to-top">top <i class="fa fa-arrow-up"></i></a>
   </section>
-  <section id="ethics-policy" class="parts-section">
+  <section id="ethics-policy" class="parts-section rivet-bg">
     <div class="container">
       <h1>Zenith Ethics Policy</h1>
       <?php the_field('ethics_policy_section_content'); ?>

@@ -25,7 +25,7 @@
       </section>
   <?php endif; ?>
   <div class="title-section">
-    <h1 class="page-title">Affiliations</h1>
+    <h1 id="affiliations" class="page-title">Affiliations</h1>
   </div>
   <?php
     $affiliations = get_field('affiliation_logos');

@@ -882,6 +882,13 @@ section{
   bottom:0;
 }
 
+.rivet-bg{
+  background-image:url(images/main-metal-bg-2.jpg);
+  background-repeat:repeat-x;
+  background-size:contain;
+  background-position:center top;
+}
+
 
 @media (max-width:767px){
   #years .text-right{
