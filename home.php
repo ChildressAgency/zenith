@@ -38,43 +38,8 @@
       <?php endwhile; endif; wp_pagenavi(); ?>
     </div>
   </section>
-  <section id="jobPostings">
-    <div class="container narrow">
-      <article>
-        <h1 class="page-title">Job Postings</h1>
-        <?php the_field('job_posting_intro_content', $blog_page_id); ?>
-      </article>
-      <?php
-        $job_listings = new WP_Query(array(
-          'post_type' => 'job_listing',
-          'post_status' => 'publish',
-          'posts_per_page' => -1,
-          'meta_query' => array(
-            array(
-              'key' => 'active',
-              'compare' => '==',
-              'value' => '1'
-            )
-          )
-        ));
-
-        if($job_listings->have_posts()): while($job_listings->have_posts()): $job_listings->the_post(); ?>
-          <div class="job-listing">
-            <h3><?php the_title(); ?></h3>
-            <?php the_field('job_short_description'); ?>
-            <a href="<?php the_field('job_posting_link'); ?>" class="btn-main">See Posting Here</a>
-          </div>
-      <?php endwhile; endif; wp_reset_postdata(); ?>
-    </div>
-  </section>
-  <section id="articlesOfInterest">
-    <div class="container">
-      <article>
-        <?php the_field('articles_of_interest_content', $blog_page_id); ?>
-      </article>
-    </div>
-  </section>
   <section id="archives">
+    <div class="container narrow">
       <div class="archive-nav">
         <h3 style="text-align:center;">Archives</h3>
         <div class="row">
@@ -110,5 +75,42 @@
             } ?>
         </div>
       </div>
+    </div>
+  </section>
+  <section id="jobPostings">
+    <div class="container narrow">
+      <article>
+        <h1 class="page-title">Career Opportunities</h1>
+        <?php the_field('job_posting_intro_content', $blog_page_id); ?>
+      </article>
+      <?php
+        $job_listings = new WP_Query(array(
+          'post_type' => 'job_listing',
+          'post_status' => 'publish',
+          'posts_per_page' => -1,
+          'meta_query' => array(
+            array(
+              'key' => 'active',
+              'compare' => '==',
+              'value' => '1'
+            )
+          )
+        ));
+
+        if($job_listings->have_posts()): while($job_listings->have_posts()): $job_listings->the_post(); ?>
+          <div class="job-listing">
+            <h3><?php the_title(); ?></h3>
+            <?php the_field('job_short_description'); ?>
+            <a href="<?php the_field('job_posting_link'); ?>" class="btn-main">See Posting Here</a>
+          </div>
+      <?php endwhile; endif; wp_reset_postdata(); ?>
+    </div>
+  </section>
+  <section id="articlesOfInterest">
+    <div class="container">
+      <article>
+        <?php the_field('articles_of_interest_content', $blog_page_id); ?>
+      </article>
+    </div>
   </section>
 <?php get_footer(); ?>

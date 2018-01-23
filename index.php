@@ -7,7 +7,7 @@
         <?php the_content(); ?>
       <?php else: ?>
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-4" style="padding-top:40px;">
             <?php 
               if(has_post_thumbnail()){
                 the_post_thumbnail('full', array('class' => 'img-responsive center-block'));
@@ -28,7 +28,7 @@
           </div>
         </div>
       <?php endif; ?>
-    <?php endwhile; endif; ?>
+    <?php endwhile; endif; wp_pagenavi(); ?>
   </div>
 </main>
 <?php get_footer(); ?>
