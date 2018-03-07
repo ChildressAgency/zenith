@@ -19,7 +19,11 @@
     </div>
   </div>
 
-  <main id="main" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/facility-bg.jpg); background-repeat:no-repeat; background-size:cover;">
+  <?php if(get_field('hero_image')): ?>
+    <main id="main" class="bg" style="background-image:url(<?php the_field('hero_image'); ?>); <?php the_field('hero_image_css'); ?>">
+  <?php else: ?>
+    <main id="main" class="no-bg">
+  <?php endif; ?>
     <div class="container">
       <h1 class="page-title text-center">Executive Team</h1>
       <div class="row">
@@ -37,8 +41,12 @@
       </div>
     </div>
   </main>
-  <?php if(have_rows('departments')): ?>
-    <section id="departments">
+  <?php if(have_rows('departments')):
+    if(get_field('background_image')): ?>
+      <section id="departments" class="bg" style="background-image:url(<?php the_field('background_image'); ?>); <?php the_field('background_image_css'); ?>">
+    <?php else: ?>
+      <section id="departments" class="no-bg">
+    <?php endif; ?>
       <div class="container narrow">
         <h2 class="text-center">Departments</h2>
         <ul>

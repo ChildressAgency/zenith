@@ -1,5 +1,9 @@
-<?php if(have_rows('testimonials', 'option')): ?>
-  <section id="testimonials" class="no-bg">
+<?php if(have_rows('testimonials', 'option')): 
+  if(get_field('background_image', 'option')): ?>
+    <section id="testimonials" class="bg" style="background-image:url(<?php the_field('background_image', 'option'); ?>); <?php the_field('background_image_css', 'option'); ?>">
+  <?php else: ?>
+    <section id="testimonials" class="no-bg">
+  <?php endif; ?>
     <div class="container">
       <div id="testimonial-slider" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">

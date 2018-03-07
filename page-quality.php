@@ -1,5 +1,9 @@
 <?php get_header(); ?>
-  <main id="main">
+<?php if(get_field('hero_image')): ?>
+  <main id="main" class="bg" style="background-image:url(<?php the_field('hero_image'); ?>); <?php the_field('hero_image_css'); ?>">
+<?php else: ?>
+  <main id="main" class="no-bg">
+<?php endif; ?>
     <div class="container">
       <h1 class="page-title">Quality</h1>
       <h3 class="text-center">Quality Policy</h3>
@@ -48,15 +52,20 @@
     </div>
     <a href="#main" class="back-to-top">top <i class="fa fa-arrow-up"></i></a>
   </section>
-  <section id="condition-codes">
+
+<?php if(get_field('condition_codes_section_background_image')): ?>
+  <section id="condition-codes" class="bg" style="background-image:url(<?php the_field('condition_codes_section_background_image'); ?>); <?php the_field('condition_codes_section_background_image_css'); ?>">
+<?php else: ?>
+  <section id="condition-codes" class="no-bg">
+<?php endif; ?>
     <div class="container narrow">
       <article>
-        <h1>Condition Codes</h1>
-        <?php the_field('condition_codes_intro'); ?>
+        <!--<h1>Condition Codes</h1>-->
+        <?php the_field('condition_codes_intro', 81); ?>
       </article>
       <div class="code-list">
         <ul class="list-unstyled">
-          <?php if(have_rows('condition_codes')): while(have_rows('condition_codes')): the_row(); ?>
+          <?php if(have_rows('condition_codes', 81)): while(have_rows('condition_codes', 81)): the_row(); ?>
             <li>
               <h3><?php the_sub_field('condition_code'); ?></h3>
               <?php the_sub_field('condition_code_description'); ?>
@@ -64,21 +73,31 @@
           <?php endwhile; endif; ?>
         </ul>
         <h3>As Removed (AR)</h3>
-        <?php the_field('as_removed_condition_code_description'); ?>
+        <?php the_field('as_removed_condition_code_description', 81); ?>
       </div>
     </div>
     <a href="#main" class="back-to-top">top <i class="fa fa-arrow-up"></i></a>
   </section>
-  <section id="traceability" class="rivet-bg">
-    <div class="container">
+
+<?php if(get_field('traceability_section_background_image')): ?>
+  <section id="traceability" class="bg" style="background-image:url(<?php the_field('traceability_section_background_image'); ?>); <?php the_field('traceability_section_background_image_css'); ?>">
+<?php else: ?>
+  <section id="traceability" class="no-bg">
+<?php endif; ?>
+    <div class="container narrow">
       <article>
         <?php the_field('traceability_section_content'); ?>
       </article>
     </div>
     <a href="#main" class="back-to-top">top <i class="fa fa-arrow-up"></i></a>
   </section>
-  <section id="ethics-policy" class="parts-section rivet-bg">
-    <div class="container">
+
+<?php if(get_field('ethics_policy_section_background_image')): ?>
+  <section id="ethics-policy" class="parts-section bg" style="background-image:url(<?php the_field('ethics_policy_section_background_image'); ?> <?php the_field('ethics_policy_background_image_css'); ?>">
+<?php else: ?>
+  <section id="ethics-policy" class="parts-section no-bg">
+<?php endif; ?>
+    <div class="container narrow">
       <h1>Zenith Ethics Policy</h1>
       <?php the_field('ethics_policy_section_content'); ?>
       <p class="text-center">

@@ -3,8 +3,12 @@
     get_template_part('partials/testimonials', 'section'); 
   } 
 ?>
-<?php if(!is_page('contact')): ?>
-  <section id="contact">
+<?php if(!is_page('contact')):
+  if(get_field('footer_contact_form_background_image', 'option')): ?>
+    <section id="contact" class="bg" style="background-image:url(<?php the_field('footer_contact_form_background_image', 'option'); ?>); <?php the_field('footer_contact_form_background_image_css', 'option'); ?>">
+  <?php else: ?>
+    <section id="contact" class="no-bg">
+  <?php endif; ?>
     <div class="container">
       <div class="row">
         <div class="col-sm-6">

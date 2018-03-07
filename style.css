@@ -220,10 +220,8 @@ img.alignright{
 }
 
 #hp-hero{
-  background-image:url(images/airplane-silhouette.jpg);
   background-repeat:no-repeat;
   background-size:cover;
-  background-position:right top;
   height:100vh;
   display:table;
   width:100%;
@@ -278,10 +276,10 @@ img.alignright{
 }
 
 #main{
-  background-image:url(images/main-metal-bg-2.jpg);
+  /*background-image:url(images/main-metal-bg-2.jpg);*/
   background-repeat:repeat-x;
   background-size:contain;
-  background-position:center top;
+  /*background-position:center top;*/
   padding-bottom:60px;
 }
 
@@ -295,6 +293,7 @@ img.alignright{
 }
 #testimonials.no-bg{
   background-image:none;
+  background-color:#000;
 }
 #testimonial-slider{
   margin-top:25px;
@@ -778,6 +777,16 @@ article h1{
   column-gap:0px;
   text-transform:uppercase;
 }
+.archive-year{
+  text-align:center;
+}
+.archive-year ul.list-inline{
+  display:inline;
+}
+.archive-year a{
+  text-transform:uppercase;
+  font-size:18px;
+}
 
 .job-listing{
   margin-top:40px;
@@ -799,7 +808,7 @@ article h1{
   margin-bottom:10px;
 }
 #consignments{
-  background-image:url(images/consignments-bg.jpg);
+  /*background-image:url(images/consignments-bg.jpg);*/
   background-repeat:no-repeat;
   background-size:cover;
 }
@@ -817,7 +826,7 @@ ul>li>.media{
   text-align:center;
 }
 #managed-repairs{
-  background-image:url(images/managed-repairs-bg.jpg);
+  /*background-image:url(images/managed-repairs-bg.jpg);*/
   background-repeat:no-repeat;
   background-size:cover;
   text-align:center;
@@ -887,6 +896,11 @@ section{
   background-repeat:repeat-x;
   background-size:contain;
   background-position:center top;
+}
+
+.bg{
+  background-repeat:no-repeat;
+  background-size:cover;
 }
 
 

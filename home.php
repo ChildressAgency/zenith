@@ -3,14 +3,23 @@
       //get static blog page content field
       $blog_page = get_page_by_path('news-info');
       $blog_page_id = $blog_page->ID; ?>
-  <main id="main"<?php if(get_field('hero_image', $blog_page_id)){ echo ' style="background-image:url(' . get_field('hero_image', $blog_page_id) . '");'; } ?>>
+<?php if(get_field('hero_image', $blog_page_id)): ?>
+  <main id="main" class="bg" style="background-image:url(<?php the_field('hero_image', $blog_page_id); ?>); <?php the_field('hero_image_css', $blog_page_id); ?>">
+<?php else: ?>
+  <main id="main" class="no-bg">
+<?php endif; ?>
         <div class="container narrow">
           <article>
             <?php the_field('intro_content', $blog_page_id); ?>
           </article>
         </div>
   </main>
-  <section id="latestNews">
+
+<?php if(get_field('latest_news_section_background_image')): ?>
+  <section id="latestNews" class="bg" style="background-image:url(<?php the_field('latest_news_section_background_image'); ?>); <?php the_field('latest_news_section_background_image_css'); ?>">
+<?php else: ?>
+  <section id="latestNews" class="no-bg">
+<?php endif; ?>
     <div class="container narrow">
       <h1>Latest News</h1>
       <?php if(have_posts()): while(have_posts()): the_post(); ?>
@@ -38,12 +47,23 @@
       <?php endwhile; endif; wp_pagenavi(); ?>
     </div>
   </section>
-  <section id="archives">
+
+<?php if(get_field('archives_section_background_image')): ?>
+  <section id="archives" class="bg" style="background-image:url(<?php the_field('archives_section_background_image'); ?>); <?php the_field('archives_section_background_image_css'); ?>">
+<?php else: ?>
+  <section id="archives" class="no-bg">
+<?php endif; ?>
     <div class="container narrow">
       <div class="archive-nav">
         <h3 style="text-align:center;">Archives</h3>
         <div class="row">
+          <div class="archive-year">
+            <ul class="list-unstyled list-inline">
+              <?php wp_get_archives(array('type' => 'yearly')); ?>
+            </ul>
+          </div>
           <?php
+          /*
             global $wpdb;
             $year_prev = null;
             $months = $wpdb->get_results("
@@ -52,32 +72,40 @@
               WHERE post_status = 'publish'
                 AND post_type = 'post'
               GROUP BY month, year
-              ORDER BY post_date DESC");
+              ORDER BY year DESC, month ASC");
 
             if($months){
               $i=0;
               foreach($months as $month){
                 $year_current = $month->year;
+                if(($year_current != $year_prev) && ($year_prev != null)){
+                  echo '</div></div></div>';                 
+                }
                 if($year_current != $year_prev){
                   if($i%3==0){ echo '<div class="clearfix"></div>'; }
-                  echo '<div class="col-sm-4"><div class="archive-year"><h4>' . $month->year . '</h4><ul>' ;
+                  echo '<div class="col-sm-4"><div class="archive-year"><h4>' . $month->year . '</h4><div class="row">' ;
                 }
 
-                echo '<li><a href="' . home_url() . '/' . $month->year . '/' . date("m", mktime(0,0,0,$month->month,1,$month->year)) . '">' . date_i18n("M", mktime(0,0,0,$month->month,1,$month->year)) . '</a></li>';
+                echo '<div class="col-xs-4"><a href="' . home_url() . '/' . $month->year . '/' . date("m", mktime(0,0,0,$month->month,1,$month->year)) . '">' . date_i18n("M", mktime(0,0,0,$month->month,1,$month->year)) . '</a></div>';
 
-                if($year_current != $year_prev){
-                  echo '</ul></div></div>';
-                }
+                //if($year_current != $year_prev){
+                //}
 
                 $year_prev = $year_current;
                 $i++;
               }
-            } ?>
+            }*/
+             ?>
         </div>
       </div>
     </div>
   </section>
-  <section id="jobPostings">
+
+<?php if(get_field('career_opportunity_section_background_image')): ?>
+  <section id="jobPostings" class="bg" style="background-image:url(<?php the_field('career_opportunity_section_background_image'); ?>); <?php the_field('career_opportunity_section_background_images_css'); ?>">
+<?php else: ?>
+  <section id="jobPostings" class="no-bg">
+<?php endif; ?>
     <div class="container narrow">
       <article>
         <h1 class="page-title">Career Opportunities</h1>
@@ -106,7 +134,12 @@
       <?php endwhile; endif; wp_reset_postdata(); ?>
     </div>
   </section>
-  <section id="articlesOfInterest">
+
+<?php if(get_field('articles_of_interest_section_background_image')): ?>
+  <section id="articlesOfInterest" class="bg" style="background-image:url(<?php the_field('articles_of_interest_section_background_image'); ?>">
+<?php else: ?>
+  <section id="articlesOfInterest" class="no-bg">
+<?php endif; ?>
     <div class="container">
       <article>
         <?php the_field('articles_of_interest_content', $blog_page_id); ?>
