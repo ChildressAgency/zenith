@@ -23,7 +23,7 @@
     <?php get_template_part('partials/testimonials', 'section'); ?>
     <div class="container">
       <article>
-        <?php the_field('traceability_section_content'); ?>
+        <?php the_field('traceability_section_content', 11); ?>
       </article>
     </div>
   </main>
