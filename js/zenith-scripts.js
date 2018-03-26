@@ -76,7 +76,23 @@ jQuery(document).ready(function($){
 
   $('.acf-map').each(function () {
     map = new_map($(this));
-  });  
+  });
+
+  $('#blogModal').on('show.bs.modal', function(event){
+    var blogPost = $(event.relatedTarget);
+    var blogImage = blogPost.data('blog_image');
+    var blogTitle = blogPost.data('blog_title');
+    var blogSubtitle = blogPost.data('blog_subtitle');
+    var blogDate = blogPost.data('blog_date');
+    var blogContent = blogPost.data('blog_content');
+
+    var modal = $(this);
+    modal.find('#blogImage').attr('src', blogImage).attr('alt', blogTitle);
+    modal.find('#blogTitle').text(blogTitle);
+    modal.find('#blogSubtitle').text(blogSubtitle);
+    modal.find('#blogDate').text(blogDate);
+    modal.find('.modal-body').html(blogContent);
+  });
 
 });
 
